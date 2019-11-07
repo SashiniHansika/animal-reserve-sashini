@@ -20,10 +20,13 @@ exports.handler = function (event, context, callback) {
             let label = data.Labels[0].Name;
             ddb.put({
                 TableName: 'slp-animal-store',
-                Item: { 'name': '@(s3.object.key)', 'label': '@(label)' }
+                Item: {
+                    'name': s3.object.key,
+                    'label': label
+                }
             }).promise()
                 .then((data) => {
-                    callback(null,{})
+                    callback(null, {})
                     //your logic goes here
                 })
                 .catch((err) => {
