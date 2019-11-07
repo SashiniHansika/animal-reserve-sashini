@@ -1,0 +1,112 @@
+{
+  "EDITOR_STATE": {
+    "allProjectFiles": {
+      "1938d614-6ef8-4625-b791-77fdebf24cd6": {
+        "id": "1938d614-6ef8-4625-b791-77fdebf24cd6",
+        "parent": null,
+        "name": "animal-reserve-sashini",
+        "type": "DIRECTORY",
+        "isDirectory": true,
+        "children": [
+          "089f1046-a991-4a13-847b-0a6d86e9bd40"
+        ],
+        "isRemovable": false,
+        "filePath": "animal-reserve-sashini"
+      },
+      "089f1046-a991-4a13-847b-0a6d86e9bd40": {
+        "id": "089f1046-a991-4a13-847b-0a6d86e9bd40",
+        "parent": "1938d614-6ef8-4625-b791-77fdebf24cd6",
+        "name": "lambda.js",
+        "type": "JS_LAMBDA",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "animal-reserve-sashini/lambda.js",
+        "code": "exports.handler = function(event, context, callback) {\n\n    console.log(JSON.stringify(event,null,2));\n    callback(null,event);\n}",
+        "config": {
+          "runtime": "nodejs8.10",
+          "handler": "handler",
+          "timeout": 60,
+          "memory": 128,
+          "layers": []
+        },
+        "triggers": [
+          {
+            "resourceName": "s3slpAnimalsUpload",
+            "config": {
+              "type": "s3:ObjectCreated:*",
+              "keyPrefix": "",
+              "keySuffix": ""
+            }
+          }
+        ],
+        "testCases": {
+          "39718274-7509-4676-b56d-d423ae41b867": {
+            "id": "39718274-7509-4676-b56d-d423ae41b867",
+            "name": "TestEvent",
+            "functionId": "089f1046-a991-4a13-847b-0a6d86e9bd40",
+            "event": "{\r\n    \r\n}"
+          },
+          "f04f969c-9c5c-4a85-ad7a-0a99cf762a81": {
+            "id": "f04f969c-9c5c-4a85-ad7a-0a99cf762a81",
+            "name": "Testevent",
+            "functionId": "089f1046-a991-4a13-847b-0a6d86e9bd40",
+            "event": "{\n    \"key1\": \"value1\",\n    \"key2\": \"value2\",\n    \"key3\": \"value3\"\n}"
+          }
+        }
+      }
+    },
+    "deletedFiles": [],
+    "rootNode": "1938d614-6ef8-4625-b791-77fdebf24cd6",
+    "openFiles": [
+      "089f1046-a991-4a13-847b-0a6d86e9bd40"
+    ],
+    "currentFileId": "089f1046-a991-4a13-847b-0a6d86e9bd40",
+    "resources": {
+      "s3slpAnimalsUpload": {
+        "name": "s3slpAnimalsUpload",
+        "type": "S3",
+        "config": {
+          "mode": 1,
+          "bucket": {
+            "region": "us-east-2",
+            "name": "slp-animals-upload"
+          }
+        }
+      }
+    },
+    "customTemplate": {
+      "dialect": null,
+      "definitions": {}
+    },
+    "envVariables": [
+      {
+        "lambdaId": "all",
+        "varKey": "SIGMA_AWS_ACC_ID",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      }
+    ],
+    "packageJSON": {
+      "dependencies": {}
+    }
+  },
+  "PROJECT_META": {
+    "projectName": "animal-reserve-sashini",
+    "projectDescription": "Animal detecting ",
+    "projectVersion": "1.0.0",
+    "projectRegion": "us-east-2",
+    "platform": "AWS",
+    "platformRegions": {},
+    "lastSave": 1573109555230
+  },
+  "VCS_STATE": {
+    "provider": "GitHub",
+    "repo": {
+      "name": "animal-reserve-sashini",
+      "url": "https://github.com/SashiniHansika/animal-reserve-sashini"
+    }
+  }
+}
